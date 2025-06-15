@@ -1,0 +1,97 @@
+Your task is to build this.
+
+Personal Knowledge Assistant PRD
+
+Offline Local AI for Private Data Conversations
+Executive Summary
+A privacy-first personal knowledge assistant that runs entirely offline, allowing users to chat with their personal documents, notes, and data without any external dependencies. Built specifically for Replit Agent deployment with optimized resource usage and streamlined development workflow.
+Problem Statement
+Users need a way to interact with their personal knowledge base (documents, notes, research) through natural language conversations, but existing solutions require internet connectivity and raise privacy concerns by sending data to external services. Current AI assistants cannot access personal documents securely or work reliably offline.
+Solution Overview
+A local AI-powered knowledge assistant that:
+* Runs completely offline with no external API calls
+* Processes and indexes personal documents locally
+* Enables natural language conversations with personal data
+* Maintains complete privacy and data control
+* Optimized for Replit's containerized environment
+Target Users
+Primary: Privacy-conscious knowledge workers, researchers, students, and professionals who work with sensitive documents and want offline AI assistance.
+Secondary: Teams in regulated industries, remote workers with unreliable internet, and users in regions with data sovereignty requirements.
+Key Features & Requirements
+Core Features
+1. Document Ingestion: Support for text files (.txt, .md, .docx, .pdf) with drag-and-drop upload
+2. Local AI Chat: Small language model integration for conversations with your documents
+3. Semantic Search: Vector-based document search with relevant context retrieval
+4. Privacy-First: Completely offline operation with no external API calls
+Technical Architecture
+Frontend
+* Framework: React with Nextjs, vercel for fast development
+* UI Library: Tailwind CSS for rapid styling
+* File Upload: React-dropzone for document ingestion
+* Chat UI: Custom components with auto-scroll and typing indicators
+Backend
+* Runtime: Node.js with Express
+* AI Model: Ollama integration with Llama 3.2 3B or similar
+* Vector Store: ChromaDB or in-memory vector search
+* Document Processing: PDF.js, mammoth.js for document parsing
+* Embeddings: sentence-transformers via Python bridge or JS equivalent
+Data Flow & Architecture Reference
+Following the pattern from local-search:
+1. Document upload → Text extraction and chunking
+2. Local embedding generation → Vector storage
+3. Query → Semantic search → Context retrieval
+4. LLM response generation → Citation display
+Similar to local-search's approach of combining semantic search with local LLMs for private document interaction.
+Replit Agent Optimizations
+Resource Constraints
+* Memory: Optimize for 4-8GB RAM limit
+* Storage: Efficient document chunking and compression
+* CPU: Model inference optimization for limited cores
+* Network: Completely offline operation
+Development Workflow
+* Hot Reload: Fast development iteration
+* Package Management: Minimal dependencies
+* Build Optimization: Bundle splitting for faster loads
+* Environment Setup: One-command deployment
+Replit-Specific Features
+* File System Integration: Direct access to Repl files
+* Port Configuration: Automatic port detection and forwarding
+* Environment Variables: Secure model and data path configuration
+* Database: SQLite for metadata, filesystem for documents
+Technical Specifications
+Performance Targets
+* Response Time: <3 seconds for typical queries
+* Memory Usage: <2GB during normal operation
+* Storage: <500MB base installation
+* Concurrent Users: Support for 1-5 simultaneous conversations
+Model Requirements
+* Size: 3-7B parameters maximum
+* Quantization: 4-bit or 8-bit for memory efficiency
+* Context Window: 4K-8K tokens
+* Languages: English primary, extensible
+File Support
+* Text Formats: .txt, .md, .rtf
+* Documents: .pdf, .docx, .odt
+* Structured: .json, .csv (basic support)
+* Size Limits: 50MB per file, 500MB total storage
+User Experience
+User Experience
+* Setup: Upload documents and let the system index them
+* Chat: Ask questions about your documents in natural language
+* Citations: Get answers with source references from your files
+* Privacy: Everything runs locally with no data leaving your environment
+Success Metrics
+Technical Metrics
+* Model loading time <30 seconds
+* Query response time <3 seconds
+* Memory usage stays under 2GB
+* Zero external network requests
+User Experience Metrics
+* Document processing success rate >95%
+* User satisfaction with answer relevance
+* Time saved vs manual document search
+* Feature adoption rates
+Dependencies & Requirements
+
+Conclusion
+This Personal Knowledge Assistant delivers private, offline AI interaction with personal documents using Replit's platform. The focus on resource optimization and privacy-first design creates a tool that respects user data while providing intelligent document search and conversation capabilities.
